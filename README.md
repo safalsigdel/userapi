@@ -50,7 +50,7 @@ All the stuff is handled by ApiToken(name any) middleware.
   </p>
   
   <img src='public/api-check.png' alt='api-check'><br>
-  <h4>Build your own api using custom authentication  </h4>
+  <h4>Build your own api using custom authentication :) </h4>
   
 </body>
 </html>
