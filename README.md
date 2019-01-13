@@ -40,12 +40,16 @@ All the stuff is handled by ApiToken(name any) middleware.
   Example<br>
   <img src ='public/login.png' alt='login'>
   <br>
-  <p> 1) In api.php define route that is protected by ApiToken middleware.These route can only be accessed when token is present in the request header<p>
- 
-  <p> 2) Upon registration token is received which can be used to access various part of the application </p>
+  <p> 1) In api.php define route that is protected by ApiToken middleware.These route can only be accessed when token is present in the request header.<p>
+  <p> 2) Upon registration token is received which can be used to access various part of the application. </p>
   <p> 3) To access api routes,Authorization header must be set.  </p>
   <p> 4) The value of Authorization is the token that is received after registration.<p> 
   <p> 5) When the token matches, user can access the resource that is requested.</p>
+  <p>In below example 'api-check' route is accessed which is protected by ApiToken middleware. <br>
+  To access this route Authorization header is set
+  </p>
+  
+  <img src='public/api-check.png' alt='api-check'>
   
 </body>
 </html>

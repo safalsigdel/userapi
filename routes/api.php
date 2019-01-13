@@ -21,9 +21,10 @@ Route::post('user-register','Api\UserController@register');
 Route::post('user-login', 'Api\UserController@login');
 
 Route::middleware('ApiToken')->group(function () {
+    //here you can register route
 
-    Route::get('header-check', function (Request $request) {
-
+    Route::get('api-check', function (Request $request) {
         return User::where('access_token', $request->header('Authorization'))->first();
     });
+
 });
