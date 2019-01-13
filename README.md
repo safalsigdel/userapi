@@ -35,12 +35,15 @@
   i) email <br>
   ii) email <br> 
   </p>
-  Demo<br>
+  Example<br>
   <img src ='public/login.png' alt='login'>
-  <p>Upon registration token is received which can be used to access various part of the application </p>
-  <p>To access route using token, Authorization header must be set.  </p>
-  <p>The value of Authorization is the token that is received after registration.<p> 
-  <p>When the token matches, user can access the resource that is requested.</p>
+  <br>
+  <p> 1) In api.php define route that is protected by ApiToken middleware.These route can only be accessed when token is present in the request header<p>
+ 
+  <p> 2) Upon registration token is received which can be used to access various part of the application </p>
+  <p> 3) To access api routes,Authorization header must be set.  </p>
+  <p> 4) The value of Authorization is the token that is received after registration.<p> 
+  <p> 5) When the token matches, user can access the resource that is requested.</p>
   
 </body>
 </html>
