@@ -49,7 +49,8 @@ All the stuff is handled by ApiToken(name any) middleware.
   To access this route Authorization header is set 
   </p>
   
-  <img src='public/api-check.png' alt='api-check'>
+  <img src='public/api-check.png' alt='api-check'><br>
+  <h4>Build your own api using custom authentication :)</h4>
   
 </body>
 </html>
