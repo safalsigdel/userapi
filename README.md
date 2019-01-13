@@ -46,7 +46,7 @@ All the stuff is handled by ApiToken(name any) middleware.
   <p> 4) The value of Authorization is the token that is received after registration.<p> 
   <p> 5) When the token matches, user can access the resource that is requested.</p>
   <p>In below example 'api-check' route is accessed which is protected by ApiToken middleware. <br>
-  To access this route Authorization header is set
+  To access this route Authorization header is set 
   </p>
   
   <img src='public/api-check.png' alt='api-check'>
