@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Http\Request;
+use App\User;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,3 +19,11 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 Route::post('user-register','Api\UserController@register');
 Route::post('user-login', 'Api\UserController@login');
+
+Route::middleware('ApiToken')->group(function () {
+
+    Route::get('header-check', function (Request $request) {
+
+        return User::where('access_token', $request->header('Authorization'))->first();
+    });
+});

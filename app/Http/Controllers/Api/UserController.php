@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use App\Http\Services\UserService;
+use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Auth;
@@ -47,8 +48,10 @@ class UserController extends Controller
         $register = $this->userService->register($data);
 
         if ($register) {
-//            $token = $register->createToken('apiToken')->accessToken;
-            return response()->json(['response'=>'User Registered Successfully','data'=>$register],200);
+
+            $token = $this->createToken();
+            User::find($register->id)->update(['access_token' => $token]);
+            return response()->json(['response'=>'User Registered Successfully','token'=>$token,'data'=>$register],200);
         }else{
             return response()->json(['response'=>'Error occured']);
         }
@@ -81,6 +84,22 @@ class UserController extends Controller
     public function getCredentials($request)
     {
        return ['email'=>$request->email,'password'=>$request->password];
+    }
+
+    public function createToken()
+    {
+        $getTokens = User::get(['access_token']);
+        generate:
+        $generateToken = str_random(20);
+
+        foreach ($getTokens as $getToken) {
+            $previousToken[] = $getToken->access_token;
+        }
+        if (!in_array($generateToken, $previousToken)) {
+            return $generateToken;
+        }else{
+            goto generate;
+        }
     }
 
 }
