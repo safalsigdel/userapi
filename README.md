@@ -2,7 +2,9 @@
 <html>
 <body>
 <h1>userapi</h1>
-<p>A laravel package that demonstrates REST api using custom authentication(without passport)</p>
+<p>A laravel package that demonstrates REST api using custom authentication(without passport).No nedd to install laravel passport.
+All the stuff is handled by ApiToken(name any) middleware.
+</p>
 <h3> Instructions</h3>
 <p>git clone this repository and cd inside the project root, then enter the following commands:</p>
 <ol>
