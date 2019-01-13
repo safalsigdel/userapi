@@ -23,12 +23,10 @@ class UserService extends Service
         return $this->interface->index();
     }
 
-    public function store($data){
-        return $this->interface->store($data);
-    }
 
     public function register($data)
     {
         return $this->interface->register($data);
     }
+
 }

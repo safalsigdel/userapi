@@ -47,9 +47,4 @@ class UserRepository extends Repository implements UserRepositoryInterface
     {
         return $this->model->create($this->userJSONData($data));
     }
-
-    public function login($data)
-    {
-
-    }
 }

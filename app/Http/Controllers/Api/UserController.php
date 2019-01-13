@@ -5,6 +5,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Services\UserService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
@@ -14,6 +15,8 @@ class UserController extends Controller
     {
         $this->userService = $userService;
     }
+
+// This function register the user
 
     public function register(Request $request)
     {
@@ -50,6 +53,34 @@ class UserController extends Controller
             return response()->json(['response'=>'Error occured']);
         }
 
+    }
+
+    public function login(Request $request)
+    {
+        $validator = Validator::make($request->all(), [
+            'email'=>'email|required|',
+            'password'=>'required|min:6'
+        ],[
+            'email.required_if'=>'Email field is required',
+            'password.required'=>"Password can't be empty"
+        ]);
+
+        if ($validator->fails()) {
+            return response()->json(['response'=>$validator->errors()],409);
+        }
+        //check whether login is successful or not
+        if (Auth::attempt($this->getCredentials($request)))
+        {
+//            $token = auth()->user()->createToken('apiToken')->accessToken;
+            return response()->json(['response'=>' User authenticated',],200);
+        }else{
+            return response()->json(['response'=>'Invalid email or password'],401);
+        }
+    }
+
+    public function getCredentials($request)
+    {
+       return ['email'=>$request->email,'password'=>$request->password];
     }
 
 }

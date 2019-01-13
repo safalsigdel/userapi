@@ -15,6 +15,5 @@ interface UserRepositoryInterface extends RepositoryInterface
 
     public function register($data);
 
-    public function login($data);
 
 }
