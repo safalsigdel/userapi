@@ -19,9 +19,10 @@ class ApiToken
         if($request->header('Authorization')){
 
             $status =$this->checkToken($request->header('Authorization'));
+
             if ($status) {
-                session('userToken', $request->header('Authorization'));
                 return $next($request);
+
             }else{
                 return response()->json(['message'=>'Not a valid Api request']);
             }
