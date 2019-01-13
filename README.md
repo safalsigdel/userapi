@@ -37,8 +37,10 @@
   </p>
   Demo<br>
   <img src ='public/login.png' alt='login'>
-
-
- 
+  <p>Upon registration token is received which can be used to access various part of the application </p>
+  <p>To access route using token, Authorization header must be set.  </p>
+  <p>The value of Authorization is the token that is received after registration.<p> 
+  <p>When the token matches, user can access the resource that is requested.</p>
+  
 </body>
 </html>
