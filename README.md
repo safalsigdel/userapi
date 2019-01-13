@@ -2,7 +2,7 @@
 <html>
 <body>
 <h1>userapi</h1>
-<p>A laravel project that demonstrates REST api using custom authentication (without passport).No nedd to install laravel passport.
+<p>A laravel project that demonstrates REST api using custom authentication (without passport). No nedd to install laravel passport.
 All the stuff is handled by ApiToken(name any) middleware.
 </p>
 <h3> Instructions</h3>
