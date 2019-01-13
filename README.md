@@ -14,7 +14,7 @@
 <li>php artisan serve</li>
 </ol>
 <p>After setup you can call following routes:</p>
-<p> * To register user, <br>Send post request to  api/user-register route using Postman or any other Http client library with following fields: <br>
+<p> * To register, <br>Send post request to  api/user-register route using Postman or any other Http client library with following fields: <br>
  
  i) name <br>
  ii) email <br>
@@ -29,8 +29,15 @@
  
  Example
  <br>
- <img src='public/register.png' alt='img' >
- 
+ <img src='public/register.png' alt='register' ><br>
+ <p> * To login, <br>Send post request to  api/user-login route using Postman or any other Http client library with following fields: <br>
+  
+  i) email <br>
+  ii) email <br> 
+  </p>
+  Demo<br>
+  <img src ='public/login.png' alt='login'>
+
 
  
 </body>

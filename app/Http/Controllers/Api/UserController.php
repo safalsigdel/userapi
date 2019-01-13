@@ -74,8 +74,8 @@ class UserController extends Controller
         //check whether login is successful or not
         if (Auth::attempt($this->getCredentials($request)))
         {
-//            $token = auth()->user()->createToken('apiToken')->accessToken;
-            return response()->json(['response'=>' User authenticated',],200);
+            $token = User::where('email', $request->email)->first();
+            return response()->json(['response'=>' User authenticated','token'=>$token->access_token],200);
         }else{
             return response()->json(['response'=>'Invalid email or password'],401);
         }
